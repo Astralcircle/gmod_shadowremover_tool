@@ -1,6 +1,5 @@
 TOOL.Category = "Render"
 TOOL.Name = "#tool.shadowremover.name"
-TOOL.Desc = "#tool.shadowremover.desc"
 TOOL.Information = {
 	{name = "left"},
 	{name = "right"}

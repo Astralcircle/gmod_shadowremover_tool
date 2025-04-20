@@ -27,14 +27,16 @@ else
 	language.Add("tool.shadowremover.right", "Add shadows")
 
 	hook.Add("EntityNetworkedVarChanged", "ShadowRemover", function(ent, name, old, new)
-		if new then
-			function ent:RenderOverride()
-				render.SuppressEngineLighting(true)
-				self:DrawModel()
-				render.SuppressEngineLighting(false)
+		if name == "ShadowRemover" then
+			if new then
+				function ent:RenderOverride()
+					render.SuppressEngineLighting(true)
+					self:DrawModel()
+					render.SuppressEngineLighting(false)
+				end
+			else
+				ent.RenderOverride = nil
 			end
-		else
-			ent.RenderOverride = nil
 		end
 	end)
 end

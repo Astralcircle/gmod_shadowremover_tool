@@ -50,8 +50,11 @@ else
 		end
 	end)
 
+	local convars = TOOL:BuildConVarList()
+
 	function TOOL.BuildCPanel(panel)
 		panel:Help("Removes the shadow of an object or makes it fullbright")
+		panel:ToolPresets("shadowremover", convars)
 		panel:CheckBox("Make object fullbright", "shadowremover_fullbright")
 		panel:CheckBox("Disable object shadow", "shadowremover_disableshadow")
 	end

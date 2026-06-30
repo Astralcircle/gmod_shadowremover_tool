@@ -33,8 +33,8 @@ if SERVER then
 else
 	language.Add("tool.shadowremover.name", "Shadow Remover")
 	language.Add("tool.shadowremover.desc", "Disables object shadows")
-	language.Add("tool.shadowremover.left", "Add shadows")
-	language.Add("tool.shadowremover.right", "Remove shadows")
+	language.Add("tool.shadowremover.left", "Remove shadows")
+	language.Add("tool.shadowremover.right", "Add shadows")
 
 	hook.Add("EntityNetworkedVarChanged", "ShadowRemover", function(ent, name, old, new)
 		if name == "ShadowRemover" then

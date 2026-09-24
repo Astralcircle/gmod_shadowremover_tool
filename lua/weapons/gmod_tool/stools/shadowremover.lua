@@ -39,9 +39,9 @@ else
 	hook.Add("EntityNetworkedVarChanged", "ShadowRemover", function(ent, name, old, new)
 		if name == "ShadowRemover" then
 			if new then
-				function ent:RenderOverride()
+				function ent:RenderOverride(flags)
 					render.SuppressEngineLighting(true)
-					self:DrawModel()
+					self:DrawModel(flags)
 					render.SuppressEngineLighting(false)
 				end
 			else

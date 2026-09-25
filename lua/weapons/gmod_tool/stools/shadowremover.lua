@@ -67,9 +67,9 @@ function TOOL:LeftClick(trace)
 		local class = ent:GetClass()
 
 		if class == "prop_physics" or class == "prop_ragdoll" then
-			if CLIENT then return true end
-
-			MakeShadowRemoved(self:GetOwner(), ent, {Shadow = self:GetClientBool("fullbright"), DisableShadow = self:GetClientBool("disableshadow")})
+			if SERVER then
+				MakeShadowRemoved(self:GetOwner(), ent, {Shadow = self:GetClientBool("fullbright"), DisableShadow = self:GetClientBool("disableshadow")})
+			end
 
 			return true
 		end
@@ -85,9 +85,9 @@ function TOOL:RightClick(trace)
 		local class = ent:GetClass()
 
 		if class == "prop_physics" or class == "prop_ragdoll" then
-			if CLIENT then return true end
-
-			MakeShadowRemoved(self:GetOwner(), ent, {Shadow = false, DisableShadow = false})
+			if SERVER then
+				MakeShadowRemoved(self:GetOwner(), ent, {Shadow = false, DisableShadow = false})
+			end
 
 			return true
 		end
